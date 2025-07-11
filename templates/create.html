@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Crear Producto{% endblock %}
+
+{% block content %}
+<h2>Crear Nuevo Producto</h2>
+<form method="POST" action="{{ url_for('main.create_product') }}">
+    {{ form.hidden_tag() if form and form.hidden_tag }} <!-- CSRF token -->
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombre del Producto</label>
+        <input type="text" class="form-control" id="name" name="name" required minlength="3">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Descripción</label>
+        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="price" name="price" step="0.01" required min="0">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Producto</button>
+    <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

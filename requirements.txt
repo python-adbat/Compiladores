@@ -1,0 +1,7 @@
+Flask>=2.0.0
+Flask-SQLAlchemy>=2.5.0
+Flask-Login>=0.5.0
+Werkzeug>=2.0.0 # Para hashing de contraseñas y otras utilidades
+psycopg2-binary # Opcional, si se usa PostgreSQL. Para SQLite no es necesario.
+python-dotenv # Para cargar variables de entorno desde .env (opcional)
+gunicorn # Servidor WSGI para producción
